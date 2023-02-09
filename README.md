@@ -2,6 +2,8 @@
 
 This is a VS Code devcontainer for development using PLCC.
 
+Licensed under GPLv3 or higher.
+
 ## Prerequisites
 
 To use this devcontianer, first install and configure the following:
