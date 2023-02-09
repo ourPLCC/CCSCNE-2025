@@ -2,7 +2,7 @@
 
 # Clone plcc into $HOME/.local/share/plcc
 mkdir -p "$HOME/.local/share"
-git clone git@github.com:ourPLCC/plcc.git "$HOME/.local/share/plcc"
+git clone https://github.com/ourPLCC/plcc.git "$HOME/.local/share/plcc"
 
 # Install plcc for bash.
 echo "export LIBPLCC=\"$HOME/.local/share/plcc/src\"" >> "$HOME/.bashrc"
