@@ -1,0 +1,36 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.202.5/containers/python-3
+{
+	"name": "Python 3",
+	"runArgs": ["--init"],
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": { 
+			// Update 'VARIANT' to pick a Python version: 3, 3.10, 3.9, 3.8, 3.7, 3.6
+			// Append -bullseye or -buster to pin to an OS version.
+			// Use -bullseye variants on local on arm64/Apple Silicon.
+			"VARIANT": "3.10",
+			// Options
+			"NODE_VERSION": "none"
+		}
+	},
+
+	"customizations": {
+		"vscode": {
+			"settings": { 
+			},
+			"extensions": [
+			]				
+		}
+	},
+
+	"postCreateCommand": "bash -c .devcontainer/install-plcc.bash",
+
+	"features": {
+		"git": "os-provided",
+		"java": "lts"
+	},
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
