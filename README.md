@@ -1,39 +1,27 @@
 # PLCC's VS Code Devconainer
 
-This is a VS Code devcontainer for development using PLCC.
+This project provides a development environment that PLCC users can use to develop languages within.
+Specifically, this project provides a [Development Container](https://containers.dev/)
+(compatible with [Codespaces](https://github.com/features/codespaces)) that comes preinstalled with
+PLCC and its dependencies.
 
-Licensed under GPLv3 or higher.
+Licensed under AGPLv3 or higher.
 
-## Prerequisites
+## Quickstart: Try PLCC in Codespaces
 
-To use this devcontianer, first install and configure the following:
+1. Open this project in Codespaces. 
+2. Run `.devcontainer/install-language.bash` to try some predefined languages.
 
-* Git
-* Docker
-* VS Code
-    * Extension: Dev Containers
+## Quickstart: Start a new project
 
-## Install in your PLCC project
+TODO: write instructions for using this project as a template to start another.
 
-In the root of the project that you want to add this PLCC DevContainer.
+## Quickstart: Add to an existing project (that does not have a ./devcontainer)
 
-```
-git clone https://github.com/ourPLCC/plcc-vscode-devcontainer.git .devcontainer
-rm -rf .devcontainer/.git
-```
-
-## Usage
-
-Open the root of your project in VS Code. When prompted, ***reopen in devcontainer***.
-
-Open a terminal (bash or zsh). The following are available.
+In the root of your project...
 
 ```
-plcc --version
-python --version
-java --version
-javac --version
-git --version
+git clone https://github.com/ourPLCC/plcc-vscode-devcontainer.git .
+cp -R plcc-vscode-devcontainer/.devcontainer .
+rm -rf plcc-vscode-devcontainer
 ```
-
-As well as PLCC's standard toolset (e.g., plccmk, scan, rep, etc.)
