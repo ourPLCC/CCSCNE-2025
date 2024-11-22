@@ -1,5 +1,18 @@
 {
-	"name": "Python 3",
-	"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
-	"postStartCommand": "bash -c .devcontainer/install"
+	"name": "PLCC",
+	
+	// PLCC needs Python.
+	"image": "mcr.microsoft.com/devcontainers/python",
+	
+	"features": {
+		// PLCC needs a Java JDK.
+		"ghcr.io/devcontainers/features/java:1": {}
+	},
+	
+	"postCreateCommand": {
+		"install plcc": [ ".devcontainer/install-plcc.bash" ]
+
+		// Uncomment to clone ourPLCC/languages into your project's root (git will ingore it)
+		// , "install languages": [ ".devcontainer/install-languages.bash"]
+	}
 }
