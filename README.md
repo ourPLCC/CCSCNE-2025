@@ -9,7 +9,7 @@ Licensed under AGPLv3 or higher.
 
 ## Quickstart: Try PLCC in Codespaces
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ourPLCC/plcc-devcontainer)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ourPLCC/devcontainer)
 
 PLCC commands will be available in your development environment.
 
@@ -25,9 +25,9 @@ PLCC commands will be available in your development environment.
 In the root of your project...
 
 ```
-git clone https://github.com/ourPLCC/plcc-vscode-devcontainer.git .
-cp -R plcc-vscode-devcontainer/.devcontainer .
-rm -rf plcc-vscode-devcontainer
+git clone https://github.com/ourPLCC/devcontainer.git .
+cp -R devcontainer/.devcontainer .
+rm -rf devcontainer
 ```
 
 ## Installing languages
