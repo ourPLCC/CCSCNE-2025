@@ -1,15 +1,11 @@
 {
 	"name": "PLCC",
 	
-	// PLCC needs Python.
-	"image": "mcr.microsoft.com/devcontainers/java",
-	
-	"features": {
-		// PLCC needs a Java JDK.
-		"ghcr.io/devcontainers/features/python:1": {}
+	"build": {
+		"dockerfile": "Dockerfile"
 	},
 	
-	"postCreateCommand": {
-		"install plcc": [ ".devcontainer/install-plcc.bash" ]
+	"features": {
+		"ghcr.io/devcontainers/features/python:1": {}
 	}
 }
