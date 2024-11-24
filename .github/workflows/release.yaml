@@ -19,6 +19,8 @@ jobs:
         with:
           branches: |
             [ 'main' ]
+          plugins: |
+            ['@semantic-release/commit-analyzer', '@semantic-release/release-notes-generator', '@semantic-release/github']
           additional-packages: |
             ['conventional-changelog-conventionalcommits@7']
         env:
