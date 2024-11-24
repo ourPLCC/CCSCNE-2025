@@ -42,6 +42,6 @@ jobs:
         if: steps.semantic.outputs.new-release-published == 'true'
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ghcr.io/ourPLCC/devcontainer
+          imageName: ghcr.io/ourplcc/devcontainer
           imageTag: ${{ steps.semantic.outputs.release-version }},${{ steps.semantic.outputs.release-major }}.${{ steps.semantic.outputs.release-minor }},${{ steps.semantic.outputs.release-major }},latest
           platform: linux/amd64,linux/arm64
