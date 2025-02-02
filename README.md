@@ -1,4 +1,4 @@
-# PLCC Workshop - SIGCSE 2024
+# PLCC Workshop - CCSCNE 2025
 
 ## Pre-Workshop Setup
 
