@@ -1,0 +1,17 @@
+# The following items should succeed based on the given grammar.
+3
++ 3 9
+
+# ...However these will yield the wrong result until you complete the exercise.
+- 2 1
+- 3 4
+
+
+# The following will work correctly once the exercise has been completed.
+_3
+* 18 5
+/ 12 2
+* + 12 6 5
+_ * + 12 6 5
+* / 45 5 - 3 10
+* / 45 5 _ - 3 10

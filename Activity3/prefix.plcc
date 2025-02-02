@@ -1,0 +1,80 @@
+
+skip WHITESPACE '\s+'
+skip COMMENT '#.*$'
+
+# Question: Why do the first three regular expressions have "\" in them?
+token ADDOP '\+'
+token SUBOP '\-'
+token MULOP '\*'
+token DIVOP '/'
+# Add new token definition here for unary negation.
+
+token INTEGER '[0-9]+'
+
+%
+
+<expr>Const ::= <INTEGER>
+<expr>Add    ::= ADDOP <expr>opnd1 <expr>opnd2
+<expr>Sub    ::= SUBOP <expr>opnd1 <expr>opnd2
+<expr>Mul    ::= MULOP <expr>opnd1 <expr>opnd2
+<expr>Div    ::= DIVOP <expr>opnd1 <expr>opnd2
+# Add a grammar rule for prefix unary negation.
+
+%
+
+Expr
+%%{
+
+    /**
+     * This method is required to be defined in the parse tree's root
+     * node (start symbol) class. The read-eval-print loop [rep] calls
+     * this automatically to trigger semantic analysis.
+     */
+    public void $run() {
+        System.out.println( this.evaluate() );
+    }
+
+    /**
+     * Because the subclasses Sub, Mul, and Div of Expr are currently
+     * missing a definition of the evaluate method, we include a dummy
+     * definition here. You should replace this with an abstract
+     * declaration to complete this exercise.
+     */
+    public int evaluate() {
+        return 999;
+    }
+
+%%}
+
+# The Const class extends the Expr class
+# Notice that the  Const class has a field named "integer" that is
+# derived from the token "INTEGER" that appears on the RHS of the
+# Const grammar rule. The "integer" field is an instance of
+# the Token class, and its 'toString' method returns the token's
+# lexeme: the Java String consisting of characters from the input
+# stream that match the token's regular expression -- decimal digits,
+# in this case.
+Const
+%%{
+    public int evaluate() {
+        return Integer.parseInt(integer.toString());
+    }
+%%}
+
+# The Add class has two fields derived from the RHS of its
+# grammar rule: "opnd1" and "opnd2". Both of these fields are
+# instances of the "Expr" class, so both instances implement
+# the "evaluate" method.
+Add
+%%{
+    public int evaluate() {
+        return opnd1.evaluate() + opnd2.evaluate();
+    }
+%%}
+
+# Note that the Sub, Mul, and Div subclasses of the Expr class get
+# created by plcc, but this file does not yet define any semantic
+# behaviors (specifically, "evaluate") other than the dummy
+# definition in their Expr superclass given above. To fix this, in
+# the space below define the "evaluate" method for each of the
+# remaining classes Sub, Mul, and Div that extend the Expr class.

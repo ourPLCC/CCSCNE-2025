@@ -1,0 +1,71 @@
+
+skip WHITESPACE '\s+'
+skip COMMENT '#.*'
+
+# All operators must take two operands for this simple grammar to work.
+token OP '[+\-*/]'
+token END '\.'
+
+token INTEGER '[0-9]+'
+
+%
+
+<start>       ::= <expr> END
+<expr>        ::= <INTEGER> <exprs>
+<exprs>       **= <expr> <OP>
+
+# Because the operands come first, we never know when we have come
+# to the end of the expression ("1 2 +" vs "1 2 + 3 -"). Therefore
+# a terminator is needed.
+# In a full programming language the END token would likely not be needed
+# because in a larger program each expression would be followed by some
+# non-expression token or end-of-file.
+
+%
+
+Start
+%%{
+
+    public void $run() {
+        System.out.println(expr.eval());
+    }
+
+%%}
+
+Expr
+%%{
+
+    public int eval() {
+        int arg = Integer.parseInt(integer.toString());
+        return exprs.eval(arg);
+    }
+
+%%}
+
+
+# Iterators are used to march through the instances (zero or more)
+# of the RHS BNF entries of a repeating rule (LHS **= RHS).
+# Note that we use a single grammar rule for all of the binary operators
+# insted of separate grammar rules for each of the operators. A switch
+# statement chooses which operation to perform.
+Exprs
+%%{
+
+    public int eval(int arg) {
+        Iterator<Expr> expIter = exprList.iterator();
+        Iterator<Token> opIter = opList.iterator();
+        while (expIter.hasNext()) {
+            Expr exp = expIter.next();
+            Token op = opIter.next();
+            int val = exp.eval();
+            switch (op.toString()) {
+                case "+" : arg += val; break;
+                case "-" : arg -= val; break;
+                case "*" : arg *= val; break;
+                case "/" : arg /= val; break;
+            }
+        }
+        return arg;
+    }
+
+%%}

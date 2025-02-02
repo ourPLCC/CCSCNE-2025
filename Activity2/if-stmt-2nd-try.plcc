@@ -1,0 +1,31 @@
+
+skip WHITESPACE '\s+'
+skip COMMENT '#.*'
+
+# The following two lines must appear before the general IDENT spec.
+
+token IF 'if'
+token THEN 'then'
+token ELSE 'else'
+token ASSGN '='
+token EOP '\.' # end-of-program marker
+
+token IDENT '[A-Za-z%$@][_A-Za-z%$@]*'
+token INTEGER '[0-9]+'
+
+%
+
+<prog>           ::= <stmts> EOP
+<stmts>          **= <stmt>
+
+<stmt>Assign     ::= <IDENT> ASSGN <expr>
+
+<stmt>IfStmt     ::= IF <expr> THEN <stmt> <elsePart>
+<elsePart>EPnada ::= 
+<elsePart>EPelse ::= ELSE <stmt>
+
+<expr>Var        ::= <IDENT>
+<expr>Const      ::= <INTEGER>
+
+%
+

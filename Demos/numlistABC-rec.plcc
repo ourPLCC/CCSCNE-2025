@@ -1,0 +1,49 @@
+# A number list grammar, containing the token and BNF rule definitions
+# and the semantic code to redisplay the list
+
+skip WHITESPACE '\s+'
+token LPAREN '\('
+token RPAREN '\)'
+token NUMBER '\d+'
+
+%
+
+<numSeq> ::= LPAREN <numbers> RPAREN
+<numbers>:NonEmptyNumbers ::= <NUMBER> <numbers>
+<numbers>:EmptyNumbers ::=
+
+%
+
+NumSeq
+
+%%{
+
+    @Override
+    public void $run() {
+        System.out.println( "(" + numbers + ")" );
+    }
+
+%%}
+
+NonEmptyNumbers
+
+%%{
+
+    @Override
+    public String toString() {
+        return " " + number.str + numbers;
+    }
+
+%%}
+
+EmptyNumbers
+
+%%{
+
+    @Override
+    public String toString() {
+        return " ";
+    }
+
+%%}
+

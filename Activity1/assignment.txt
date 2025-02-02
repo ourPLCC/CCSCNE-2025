@@ -1,0 +1,83 @@
+Pre-exercise activities
+=======================
+
+1. Run
+
+    plccmk idents.plcc
+
+to create a set of Java programs in a directory named Java that implement
+a scanner that follows the lexical specification in 'idents.plcc'.
+
+2. Test your implementation with the following command:
+
+    scan
+
+giving input from the keyboard and observing the token output produced.
+
+Be sure your implementation properly skips whitespace and comments,
+properly recognizes IDENT tokens as given in the specification, and
+properly returns an ERROR token for anything else.
+
+PLCC token scanning algorithm (TL;DR)
+-------------------------------------
+
+In PLCC, extracting the next token from an input character stream starts
+with an empty token *candidate*.  Token and skip matches, using Java
+regular expressions as given in the lexical specification, are attempted
+in the exact order that the specifications appear in the PLCC lexical
+specification section.  Matches are always anchored at the current start
+of the input stream (using Java regular expression matching rules),
+always consist of one or more characters, and never cross line boundaries.
+
+When a skip specification matches the input stream:
+
+    If the token candidate is empty, the matched characters are
+    consumed from the input stream, and lexical processing starts afresh
+    (at the beginning) without adding any tokens to the output token
+    stream. Otherwise matching continues.
+
+When a token specification matches the input stream:
+
+    If the match has a length *greater* than that of the candidate, then
+    the candidate is replaced by this match, and matching continues.
+    Otherwise the candidate is left unchanged, and matching continues.
+
+The above approach is called "first longest match". In particular,
+if two or more (longest) token matches have the same length, only the
+first is kept.
+
+Once all of the token specifications have been examined:
+
+    If the token candidate is nonempty, that token is added to the
+    output token stream, the matched characters are consumed from the
+    input stream, and lexical processing starts afresh.  If the token
+    candidate is empty and the input stream is not at end-of-file, an
+    error "token" is added to the output token stream containing the
+    first character in the input stream, that character is consumed,
+    and token processing starts afresh. Otherwise an end-of-file "token"
+    is added to the output token stream.
+
+PLCC Scanner files (in the Java directory)
+------------------------------------------
+
+Scan.java             -- defines methods that read character stream
+                         input and produce Token stream output; its
+                         main method uses System.in for character
+                         stream input and System.out for token stream
+                         output.
+Token.java            -- defines the Token class; its main method
+                         displays the token information extracted
+                         from the lexical specification.
+
+
+Workshop Exercise #1
+====================
+
+1. Add a new token INTEGER that matches unsigned decimal integers.
+
+2. Add tokens IF and ELSE for the reserved words "if" and "else"
+respectively.
+
+Use the `scan' program to test your work.
+
+scan < testprog.txt

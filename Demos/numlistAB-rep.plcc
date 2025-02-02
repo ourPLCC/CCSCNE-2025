@@ -1,0 +1,13 @@
+# A number list grammar that uses the repeating rule "**="
+
+skip WHITESPACE '\s+'
+token LPAREN '\('
+token RPAREN '\)'
+token NUMBER '\d+'
+
+%
+
+<numSeq> ::= LPAREN <numbers> RPAREN
+<numbers> **= <NUMBER>
+
+%
