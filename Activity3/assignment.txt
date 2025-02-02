@@ -1,0 +1,54 @@
+Workshop Exercise #3
+====================
+
+Run 'plccmk prefix.plcc' after you complete each of the steps below. You
+can test your interpreter by running the read-eval-print loop 'rep',
+entering prefix expressions at the keyboard or from a file.
+
+1. Complete the semantic section of the 'prefix.plcc' specification
+file so that prefix expressions of the binary operators "-", "*",
+and "/" defined in the 'Sub', 'Mul', and 'Div' classes get evaluated
+correctly. Model your solutions by examining the implementation of the
+"+" operator in the 'Add' class.
+
+Observe, for example, that the prefix expression
+
+    - 5 3
+
+evalutes to 2, not -2, so order is important.
+
+Test your solution to this step as follows:
+
+    rep < testprog1.txt
+
+Examine the contents of the test file to see if your results are
+correct.
+
+2. Add a new operator for unary negation: "_". Augment all three
+sections of the PLCC prefix.plcc specification file to account for it.
+
+Test your solution to this step as follows:
+
+    rep < testprog2.txt
+
+Notes
+=====
+
+This exercise illustrates (A) how the parse tree node classes have
+available to them their child nodes (as fields in the LHS class)
+for semantic analyis, and (B) how subclass names are used in PLCC to
+distinguish among multiple BNF rules having the same LHS nonterminal.
+
+Question: Without making any other changes to your language specification
+file, could you use the SUB token "-" as the prefix operator for unary
+negation instead of "_"?  Explain your answer.
+
+Question: Without making any other changes to your language specification
+file, can you change the lexical specification for the INTEGER token so
+signed decimal integers will be recognized? If so, -9 will be considered
+as a single token, and the expression "--9 4" evaluates to -13, while
+the expression "- 9 4" evaluates to 5.
+
+Question: Without making any other changes to your language specification
+file, can you use the digraph "--" as the prefix operator for unary
+negation? If so, what would be the value of the expression "--- 2 7"?

@@ -1,0 +1,16 @@
+
+skip WHITESPACE '\s+'
+
+# The following ignores (skips) comments in the input stream, where (in
+# this example) a comment is defined to start with the '#' character
+# and continue to the end of the current line.
+# The '$' is technically not needed because PLCC matching never crosses
+# a line boundary.
+skip COMMENT '#.*$'
+
+token IDENT '[A-Za-z%$@][_A-Za-z%$@]*'
+
+%
+
+%
+

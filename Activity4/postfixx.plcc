@@ -1,0 +1,93 @@
+
+skip WHITESPACE '\s+'
+skip COMMENT '#.*'
+
+token OP2 '[+\-*/]'
+token OP1 '_' # unary minus
+token END '\.'
+
+token INTEGER '[0-9]+'
+
+%
+
+<start>       ::= <expr> END
+<expr>        ::= <INTEGER> <exprs>
+<exprs>       **= <op12>
+<op12>Op1     ::= <OP1>                # OP1 takes one operand
+<op12>Op2     ::= <expr> <OP2>         # OP2 takes two operands
+
+# Because the operands come first, we never know when we have come
+# to the end of the expression ("1 2 +" vs "1 2 + 3 -"). Therefore
+# a terminator is needed.
+# In a full programming language the END token would likely not be needed
+# because in a larger program each expression would be followed by some
+# non-expression token or end-of-file.
+
+%
+
+Start
+%%{
+
+    public void $run() {
+        System.out.println(expr.eval());
+    }
+
+%%}
+
+Expr
+%%{
+
+    public int eval() {
+        int arg = Integer.parseInt(integer.toString());
+        return exprs.eval(arg);
+    }
+
+%%}
+
+
+# Iterators are used to march through the instances (zero or more)
+# of the RHS BNF entries of a repeating rule
+Exprs
+%%{
+
+    public int eval(int arg) {
+        Iterator<Op12> op12Iter = op12List.iterator();
+        while (op12Iter.hasNext()) {
+            Op12 op12 = op12Iter.next();
+            arg = op12.eval(arg);
+        }
+        return arg;
+    }
+
+%%}
+
+Op12
+%%{
+    public abstract int eval(int arg);
+%%}
+
+# unary operations (takes one arg)
+Op1
+%%{
+    public int eval(int arg) {
+        switch (op1.toString()) {
+            case "_": arg = -arg; break;
+        }
+        return arg;
+    }
+%%}
+
+# binary operations (takes one arg and another val)
+Op2
+%%{
+    public int eval(int arg) {
+        int val = expr.eval();
+        switch (op2.toString()) {
+            case "+": arg += val; break;
+            case "-": arg -= val; break;
+            case "*": arg *= val; break;
+            case "/": arg /= val; break;
+        }
+        return arg;
+    }
+%%}

@@ -1,0 +1,28 @@
+# Indentation is here only for readability.
+
+a = 2
+if a then a = 3 endif
+
+b = 4
+if b then b = 5 else b = 6 endif
+
+c = 7
+d = 8
+if c then
+    if d then c = 9 endif
+else
+    d = 10
+endif
+
+e = 11
+f = 12
+if e then
+    if f then
+        e = 13
+    else
+        f = 14
+    endif
+endif
+
+.
+

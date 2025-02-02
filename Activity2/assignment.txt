@@ -1,0 +1,50 @@
+Workshop Exercise #2
+====================
+
+The if statement grammars in 'if-stmt-xxx-try.plcc' are both ambiguous.
+In the '1st-try' case, it's fairly obvious that the LL(1) parser can't
+disambiguate between the two RHS sides of 'IfStmt' and 'IfStmtElse'
+because they both start with the 'IF' token. In the '2nd-try' case, the
+situation is a bit less obvious. (See if you can find the problem!)
+
+Starting with 'if-stmt-2nd-try.plcc', make a copy of this file into a
+new file with the name 'if-stmt.plcc' as follows:
+
+    cp if-stmt-2nd-try.plcc if-stmt.plcc
+
+Make changes to this new file that will eliminate the ambiguity by
+requiring that all if statements end with the (new) "endif" keyword.
+
+(Note that the use of IF...ENDIF sets up a bracketing similar to what
+parantheses do. It means that the nesting depth of the if statements
+can be determined unambiguously.)
+
+Run
+
+    plccmk if-stmt.plcc
+
+to make sure that plcc doesn't identify any LL(1) problems with your
+'if-stmt.plcc' solution.
+
+Use the 'parse' command to test your solution. You can input programs
+from the keyboard or from a file, as shown here:
+
+    parse < testprog.txt
+
+The output of 'parse' will be the string "OK" if the parse succeeds,
+and an error message otherwise.
+
+To debug and trace the parse's progress, use the '-t' (for "trace") flag:
+
+    parse -t < testprog.txt
+
+Notice how the the parse trace starts with the *start symbol* --
+the first nonterminal on the LHS of the first grammar rule in the BNF
+specification -- and recursively indents (and parses) the RHS items that
+appear in each grammar rule.
+
+Each line of the trace display begins with the line number from the
+input file where the parse is working. Sometimes, when the 'parse'
+program gives an error message, it's difficult to see exactly where the
+error occurs. Using the '-t' flag helps to do so.
+

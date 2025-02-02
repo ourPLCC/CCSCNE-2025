@@ -1,0 +1,40 @@
+# A number list iterative-style grammar that also includes semantics to print
+# the list
+#
+
+skip WHITESPACE '\s+'
+token LPAREN '\('
+token RPAREN '\)'
+token NUMBER '\d+'
+
+%
+
+<numSeq>  ::= LPAREN <numbers> RPAREN
+<numbers> **= <NUMBER>
+
+%
+
+NumSeq
+%%{
+
+    @Override
+    public void $run() {
+        System.out.println( '(' + numbers.toString() + ')' );
+    }
+
+%%}
+
+Numbers
+%%{
+
+    @Override
+    public String toString() {
+        String ret = " ";
+        for (Token t: numberList) {
+            ret += t.str + " ";
+        }
+        return ret;
+    }
+
+%%}
+

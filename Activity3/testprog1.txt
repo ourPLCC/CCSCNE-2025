@@ -1,0 +1,7 @@
+# The following items should succeed based on the given grammar.
+3
++ 3 9
+
+# ...However these will yield the wrong result until you complete the exercise.
+- 2 1
+* / 45 5 - 3 10

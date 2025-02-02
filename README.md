@@ -1,43 +1,37 @@
-# PLCC's Development Conainer
+# PLCC Workshop - SIGCSE 2024
 
-This project provides a development environment that PLCC users can use to develop languages within.
-Specifically, this project provides a [Development Container](https://containers.dev/)
-(compatible with [Codespaces](https://github.com/features/codespaces)) that comes preinstalled with
-PLCC and its dependencies.
+## Pre-Workshop Setup
 
-Licensed under AGPLv3 or higher.
+Before attending the workshop,
+please try to complete the instructions linked below. If you are
+not able to, no worries, we'll have you team up with someone who has.
 
-## Quickstart: Try PLCC in Codespaces
+* [Pre-Workshop Setup Instructions](PRE-WORKSHOP.md)
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ourPLCC/devcontainer)
+## Schedule
 
-PLCC commands will be available in your development environment.
+* 20m Welcome
+    * 10m PLCC Overview
+    * 10m Team Up and Setup
 
-## Quickstart: Start a new project based on this one
+* 35m Lexical Analysis
+    * 10m Pres
+    * 20m Exercise
+    * 5m Solution
 
-1. Create a new project by click `Use this template` in the upper right.
-2. Open your project new project in Codespaces.
+* 35m Syntactic Analysis
+    * 10m Pres
+    * 20m Exercise
+    * 5m Solution
 
-PLCC commands will be available in your development environment.
+* 10m Break
 
-## Quickstart: Add to an existing project (that does not have a ./devcontainer)
+* 30m Semantic Analysis
+    * 5m Pres
+    * 20m Exercise
+    * 5m Solution
 
-In the root of your project...
+* 30m Curriculum (V6, ABC, OBJ)
 
-```
-git clone https://github.com/ourPLCC/devcontainer.git .
-cp -R devcontainer/.devcontainer .
-rm -rf devcontainer
-```
+* 20m How to Adopt
 
-## Installing languages
-
-[ourPLCC/languages](https://github.com/ourPLCC/languages) contains many example languages built using PLCC.
-To try them in your development environment, run...
-
-```
-.devcontainer/install-languages.bash
-```
-
-This clones [ourPLCC/languages](https://github.com/ourPLCC/languages) into ./languages such that
-Git will ignore it.

@@ -1,0 +1,15 @@
+# A number list grammar, containing the token and BNF rule definitions
+
+skip WHITESPACE '\s+'
+token LPAREN '\('
+token RPAREN '\)'
+token NUMBER '\d+'
+
+%
+
+<numSeq> ::= LPAREN <numbers> RPAREN
+<numbers>:NonEmptyNumbers ::= <NUMBER> <numbers>
+<numbers>:EmptyNumbers ::=
+
+%
+
