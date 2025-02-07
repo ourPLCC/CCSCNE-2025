@@ -1,30 +1,30 @@
-# Pre-Workshop Setup
+# Pre-Workshop
 
 During the workshop, you will be using GitHub and its Codespaces service. GitHub
 offers a free tier that provides more than enough free, monthly credits for what
 you will need for this workshop.
 
-We kindly ask that you try to complete these setup instructions before attending the
-workshop. They should take about 15-30m.
+**Before attending the workshop** we kindly ask you to complete these setup instructions.
+They should take about 15-30m.
 
 If you are unable to complete the instructions, please do not worry. Participants
-will be working in small teams, and so long as one person in each team was able
+will be working in small teams. So long as one person in each team was able
 to complete the instructions, we should have a critical mass for the workshop.
 
 If you need help (or just want to chat with us),
 please join our [Discord server](https://discord.gg/EVtNSxS9E2)
 and chat with us in our help channel.
 
-## Instructions
+## Pre-Workshop Instructions
 
 1. Sign up for a [GitHub](github.com) account. You may use an existing account.
 
 2. Sign in to [GitHub](github.com).
 
-3. Fork our [CCSCNE 2025 workshop repository](https://github.com/ourPLCC/CCSCNE-2025) by...
+3. Fork our CCSCNE 2025 workshop repository by...
 
-    a. Navigating to <https://github.com/ourPLCC/CCSCNE-2025> and
-    b. Selecting `Fork` and then `Create fork`.
+    - Navigating to <https://github.com/ourPLCC/CCSCNE-2025> and
+    - Selecting `Fork` and then `Create fork`.
 
 4. Create and start a codespace for your fork
    by selecting `Code` -> `Codespaces` -> `Create codespace on main`.
