@@ -1,84 +1,51 @@
-# Pre Workshop Setup
+# Pre-Workshop Setup
 
-Please do your best to complete these instructions before attending
-the workshop.
+During the workshop, you will be using GitHub and its Codespaces service. GitHub
+offers a free tier that provides more than enough free, monthly credits for what
+you will need for this workshop.
 
-## Expected time
+We kindly ask that you try to complete these setup instructions before attending the
+workshop. They should take about 15-30m.
 
-15-30 minutes
+If you are unable to complete the instructions, please do not worry. Participants
+will be working in small teams, and so long as one person in each team was able
+to complete the instructions, we should have a critical mass for the workshop.
 
-## Overview
+If you need help (or just want to chat with us),
+please join our [Discord server](https://discord.gg/EVtNSxS9E2)
+and chat with us in our help channel.
 
-During the workshop, you will work in small teams to complete some activities.
-At least one of your team members needs to have completed the instructions
-in this document. To ensure we have a critical mass of participants that
-have completed these instructions, please try to complete them now. If
-you cannot, no worries, I'm sure others will and you can share on with them.
+## Instructions
 
-You will need free accounts on GitHub. No prior experience with
-this service and Git are necessary to participate in this workshop.
-The instructions on this page will walk you through creating the
-necessary account and testing that you have access
-to the workshop materials.
+1. Sign up for a [GitHub](github.com) account. You may use an existing account.
 
-## GitHub
+2. Sign in to [GitHub](github.com).
 
-The materials for this workshop are stored in a Git repository on GitHub.
-You will need a free GitHub account so that you fork (make a copy) of this
-repository so you can save your progress through its activities.
+3. Fork our [CCSCNE 2025 workshop repository](https://github.com/ourPLCC/CCSCNE-2025) by...
 
-If you don't have a GitHub account, please create one now.
+    a. Navigating to <https://github.com/ourPLCC/CCSCNE-2025> and
+    b. Selecting `Fork` and then `Create fork`.
 
-* <https://github.com/>
+4. Create and start a codespace for your fork
+   by selecting `Code` -> `Codespaces` -> `Create codespace on main`.
 
-Now that you have an account on one of these services continue on.
+5. Wait for GitHub to build your codespace. It may take several minutes.
+   The next time you can reuse the codespace, and so connecting to it will be much faster.
 
-## Codespaces
+5. Test the codespace by trying each of the following commands in the codespace's terminal.
+   For each you should see a version number and no errors.
 
-Codespaces provide remote development environments
-preinstalled with the tools you'll need for this workshop.
-Codespaces is provided by GitHub. The free teer is more than
-sufficient to participate in this workshop.
+    ```
+    javac --version
+    python --verion
+    plcc --version
+    ```
 
-## Building and testing your development environment
+6. Stop the codespace by clicking `>< Codespaces:` in the lower left and then selecting `Stop Current Codespace`.
+   You may safely close the tab.
 
-To create your personal codespace for this project,
-right-click on the link below and open it in a new tab.
+Stopping your codespace is important to save your monthly, free compute credits from GitHub.
+After the workshop you may also want to delete the codespace to save your monthly, free storage credits from GitHub.
+To manage your codespaces, sign in to GitHub, select the hamburger menu (☰) in the upper left, and select `Codespaces`.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ourPLCC/devcontainer)
-
-The first time you do this, it will take a few minutes
-to build your development environment. Next time,
-you can reuse the environment you are building now,
-and it will open much faster.
-
-When Codespace has finished building your development
-environment you will see a VS Code interface running
-in a browser. At the bottom, there will be a terminal
-waiting for input from you.
-
-Let's confirm that PLCC and its dependencies are installed
-by running each command below.
- 
-```bash
-java --version
-python --version
-plcc --version
-```
-
-Each should report a version number (and not an error message).
-
-If any report an error, please chat with us on the
-[ourPLCC Discord server](https://discord.gg/EVtNSxS9E2),
-and we'll do our best to help you.
-
-If you don't get any errors... Congratulations, you are ready for the workshop!
-
-Before you go, stop your codespace by clicking the button in the lower-left corner that has a label similar to `>< Codespaces:`. In the displayed menu, select `Stop Current Codespace`. Once it says "Stopping your codespace" you can close the tab.
-
-You can double-check that your codespace has been stopped by opening and signing into github.com, click the hamburger menu `☰` in the upper-left corner, and select `Codespaces`. Here you can manage all of your codespaces.
-
-## Help!
-
-If you have any problems with the above, please chat with us in
-[ourPLCC Discord server](https://discord.gg/EVtNSxS9E2).
+See you soon!
