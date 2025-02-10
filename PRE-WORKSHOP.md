@@ -37,7 +37,7 @@ and chat with us in our help channel.
 
     ```
     javac --version
-    python --verion
+    python --version
     plcc --version
     ```
 
