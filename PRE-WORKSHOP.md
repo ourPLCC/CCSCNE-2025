@@ -46,6 +46,10 @@ and chat with us in our help channel.
 
 Stopping your codespace is important to save your monthly, free compute credits from GitHub.
 After the workshop you may also want to delete the codespace to save your monthly, free storage credits from GitHub.
-To manage your codespaces, sign in to GitHub, select the hamburger menu (☰) in the upper left, and select `Codespaces`.
+
+To manage your codespaces, sign in to GitHub, select the hamburger menu (☰) in the upper left,
+and select `Codespaces`. This is where you go, for example, to restart a Codespace.
+If, at the point in time you last looked at the GitHub web page, the Codespace had not yet been created,
+it may be necessary to refresh the page in your browser.
 
 See you soon!
