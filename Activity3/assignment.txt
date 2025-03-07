@@ -7,9 +7,9 @@ to execute the following command.
 
     cd ../Activity3
 
-Run 'plccmk prefix.plcc' after you complete each of the steps below. You
-can test your interpreter by running the read-eval-print loop 'rep',
-entering prefix expressions at the keyboard or from a file.
+Execute 'plccmk -c prefix.plcc' after you complete each of the steps
+below. You can test your interpreter by running the read-eval-print loop
+'rep', entering prefix expressions at the keyboard or from a file.
 
 1. Complete the semantic section of the 'prefix.plcc' specification
 file so that prefix expressions of the binary operators "-", "*",
@@ -36,6 +36,9 @@ sections of the PLCC prefix.plcc specification file to account for it.
 Test your solution to this step as follows:
 
     rep < testprog2.txt
+
+This is the last in-workshop exercise. Make sure you stop your
+workspace before leaving the workshop.
 
 Notes
 =====
