@@ -1,6 +1,12 @@
 Workshop Exercise #2
 ====================
 
+In your terminal window, make sure you are in the Activity2 directory.
+Since you were just working on Activity #1, you will probably have
+to execute the following command.
+
+    cd ../Activity2
+
 The if statement grammars in 'if-stmt-xxx-try.plcc' are both ambiguous.
 In the '1st-try' case, it's fairly obvious that the LL(1) parser can't
 disambiguate between the two RHS sides of 'IfStmt' and 'IfStmtElse'
