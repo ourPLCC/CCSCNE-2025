@@ -11,10 +11,16 @@ The if statement grammars in 'if-stmt-xxx-try.plcc' are both ambiguous.
 In the '1st-try' case, it's fairly obvious that the LL(1) parser can't
 disambiguate between the two RHS sides of 'IfStmt' and 'IfStmtElse'
 because they both start with the 'IF' token. In the '2nd-try' case, the
-situation is a bit less obvious. (See if you can find the problem!)
+situation is a bit less obvious. See if you can find the problem!
 
-Starting with 'if-stmt-2nd-try.plcc', make a copy of this file into a
-new file with the name 'if-stmt.plcc' as follows:
+Before you change anything, verify your understanding of the shortcomings
+of the two grammars by attempting to build parsers with them.
+
+    plccmk -c if-stmt-1st-try.plcc
+    plccmk -c if-stmt-2nd-try.plcc
+
+Now, starting with 'if-stmt-2nd-try.plcc', make a copy of this file into
+a new file with the name 'if-stmt.plcc' as follows:
 
     cp if-stmt-2nd-try.plcc if-stmt.plcc
 
@@ -27,7 +33,7 @@ can be determined unambiguously.)
 
 Run
 
-    plccmk if-stmt.plcc
+    plccmk -c if-stmt.plcc
 
 to make sure that plcc doesn't identify any LL(1) problems with your
 'if-stmt.plcc' solution.
