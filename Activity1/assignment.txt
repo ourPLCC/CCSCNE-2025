@@ -74,7 +74,7 @@ Once all of the token specifications have been examined:
     is added to the output token stream.
 
     The scanner does not emit the EOF token.
-	 When entering input from the keyboard, type ^D to insert an EOF character.
+    When entering input from the keyboard, type ^D to insert an EOF character.
 
 
 PLCC Scanner files (in the Java directory)
