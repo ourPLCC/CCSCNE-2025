@@ -1,14 +1,19 @@
 Pre-exercise activities
 =======================
 
-1. Run
+1. In your terminal window, make sure you are in the Activity1 directory.
+   You will probably have to execute the following command.
+
+    cd Activity1
+
+2. Run
 
     plccmk idents.plcc
 
 to create a set of Java programs in a directory named Java that implement
 a scanner that follows the lexical specification in 'idents.plcc'.
 
-2. Test your implementation with the following command:
+3. Test your implementation with the following command:
 
     scan
 
