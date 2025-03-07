@@ -56,6 +56,7 @@ Expr
 # in this case.
 Const
 %%{
+    @Override
     public int evaluate() {
         return Integer.parseInt(integer.toString());
     }
@@ -67,6 +68,7 @@ Const
 # the "evaluate" method.
 Add
 %%{
+    @Override
     public int evaluate() {
         return opnd1.evaluate() + opnd2.evaluate();
     }
