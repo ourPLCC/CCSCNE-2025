@@ -6,18 +6,29 @@ Pre-exercise activities
 
     cd Activity1
 
-2. Run
+2. Look at the contents of the file idents.plcc to familiarize yourself which
+   strings would be accepted as tokens.
+
+3. Run
 
     plccmk idents.plcc
 
-to create a set of Java programs in a directory named Java that implement
+It creates a set of Java programs in a directory named Java that implements
 a scanner that follows the lexical specification in 'idents.plcc'.
 
-3. Test your implementation with the following command:
+4. Test your implementation with the following command:
 
     scan
 
 giving input from the keyboard and observing the token output produced.
+(Type Control-D on a new line to indicate your input is finished.)
+
+5. Test your implementation with the given test input using
+   the following command:
+
+    scan < testprog.txt
+
+Again, observe the token output produced.
 
 Be sure your implementation properly skips whitespace and comments,
 properly recognizes IDENT tokens as given in the specification, and
@@ -62,6 +73,10 @@ Once all of the token specifications have been examined:
     and token processing starts afresh. Otherwise an end-of-file "token"
     is added to the output token stream.
 
+    The scanner does not emit the EOF token.
+	 When entering input from the keyboard, type ^D to insert an EOF character.
+
+
 PLCC Scanner files (in the Java directory)
 ------------------------------------------
 
@@ -83,6 +98,7 @@ Workshop Exercise #1
 2. Add tokens IF and ELSE for the reserved words "if" and "else"
 respectively.
 
-Use the `scan' program to test your work.
+Use the `scan' program to test your work. You may use keyboard input
+or the provided test file testprog.txt (as shown in the square brackets).
 
-scan < testprog.txt
+scan [ < testprog.txt ]
