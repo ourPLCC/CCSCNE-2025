@@ -11,10 +11,13 @@ Pre-exercise activities
 
 3. Run
 
-    plccmk idents.plcc
+    plccmk -c idents.plcc
 
 It creates a set of Java programs in a directory named Java that implements
 a scanner that follows the lexical specification in 'idents.plcc'.
+(The -c option ensures that any residue from previous builds is cleared
+before building a new one starts.)
+
 
 4. Test your implementation with the following command:
 
