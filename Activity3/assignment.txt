@@ -1,6 +1,12 @@
 Workshop Exercise #3
 ====================
 
+In your terminal window, make sure you are in the Activity3 directory.
+Since you were just working on Activity #2, you will probably have
+to execute the following command.
+
+    cd ../Activity3
+
 Run 'plccmk prefix.plcc' after you complete each of the steps below. You
 can test your interpreter by running the read-eval-print loop 'rep',
 entering prefix expressions at the keyboard or from a file.
