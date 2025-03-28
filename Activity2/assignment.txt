@@ -19,13 +19,9 @@ of the two grammars by attempting to build parsers with them.
     plccmk -c if-stmt-1st-try.plcc
     plccmk -c if-stmt-2nd-try.plcc
 
-Now, starting with 'if-stmt-2nd-try.plcc', make a copy of this file into
-a new file with the name 'if-stmt.plcc' as follows:
-
-    cp if-stmt-2nd-try.plcc if-stmt.plcc
-
-Make changes to this new file that will eliminate the ambiguity by
-requiring that all if statements end with the (new) "endif" keyword.
+if-stmt.plcc contains a copy of 2nd-try. Make changes to if-stmt.plcc that
+will eliminate the ambiguity by requiring that all if statements end with
+the (new) "endif" keyword.
 
 (Note that the use of IF...ENDIF sets up a bracketing similar to what
 parantheses do. It means that the nesting depth of the if statements
