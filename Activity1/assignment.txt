@@ -37,16 +37,16 @@ Be sure your implementation properly skips whitespace and comments,
 properly recognizes IDENT tokens as given in the specification, and
 properly returns an ERROR token for anything else.
 
-PLCC token scanning algorithm (TL;DR)
--------------------------------------
+How Tokens are Scanned
+----------------------
 
-In PLCC, extracting the next token from an input character stream starts
-with an empty token *candidate*.  Token and skip matches, using Java
-regular expressions as given in the lexical specification, are attempted
-in the exact order that the specifications appear in the PLCC lexical
-specification section.  Matches are always anchored at the current start
-of the input stream (using Java regular expression matching rules),
-always consist of one or more characters, and never cross line boundaries.
+(There is a more complete explanation in scanner-algo_TLDR.txt.)
+
+Both token and skip matches, using Java regular expression rules as given
+in the lexical specification, are attempted in the exact order that the
+specifications appear in the PLCC lexical specification section. Matches
+never cross line boundaries. As the scanner runs through all the
+specifications, here is what happens.
 
 When a skip specification matches the input stream:
 
@@ -61,23 +61,12 @@ When a token specification matches the input stream:
     the candidate is replaced by this match, and matching continues.
     Otherwise the candidate is left unchanged, and matching continues.
 
-The above approach is called "first longest match". In particular,
-if two or more (longest) token matches have the same length, only the
-first is kept.
+After all specifications have been tried against the current input, the
+most recent candidate is returned. The characters in the input that were
+matched get consumed. Lexical processing starts afresh.
 
-Once all of the token specifications have been examined:
-
-    If the token candidate is nonempty, that token is added to the
-    output token stream, the matched characters are consumed from the
-    input stream, and lexical processing starts afresh.  If the token
-    candidate is empty and the input stream is not at end-of-file, an
-    error "token" is added to the output token stream containing the
-    first character in the input stream, that character is consumed,
-    and token processing starts afresh. Otherwise an end-of-file "token"
-    is added to the output token stream.
-
-    The scanner does not emit the EOF token.
-    When entering input from the keyboard, type ^D to insert an EOF character.
+The scanner does not emit the EOF token.
+When entering input from the keyboard, type ^D to insert an EOF character.
 
 
 PLCC Scanner files (in the Java directory)
