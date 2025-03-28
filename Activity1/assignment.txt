@@ -40,7 +40,7 @@ properly returns an ERROR token for anything else.
 How Tokens are Scanned
 ----------------------
 
-(There is a more complete explanation in scanner-algo_TLDR.txt.)
+(There is a more complete explanation in scanner-algo.txt.)
 
 Both token and skip matches, using Java regular expression rules as given
 in the lexical specification, are attempted in the exact order that the
