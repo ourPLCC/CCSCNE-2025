@@ -11,7 +11,7 @@ always consist of one or more characters, and never cross line boundaries.
 
 When a skip specification matches the input stream:
 
-    If the token candidate is empty, the matched characters are
+    If there is no token candidate, the matched characters are
     consumed from the input stream, and lexical processing starts afresh
     (at the beginning) without adding any tokens to the output token
     stream. Otherwise matching continues.
