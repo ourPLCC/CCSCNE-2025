@@ -27,10 +27,10 @@ and chat with us in our help channel.
     - Selecting `Fork` and then `Create fork`.
 
 4. Create and start a codespace for your fork
-   by selecting `Code` -> `Codespaces` -> `Create codespace on main`.
+   by selecting the big green `Code` button -> `Codespaces` -> `Create codespace on main`.
 
 5. Wait for GitHub to build your codespace. It may take several minutes.
-   The next time you can reuse the codespace, and so connecting to it will be much faster.
+   Next time you can reuse the codespace, and so connecting to it will be much faster.
 
 5. Test the codespace by trying each of the following commands in the codespace's terminal.
    For each you should see a version number and no errors.
@@ -48,8 +48,6 @@ Stopping your codespace is important to save your monthly, free compute credits 
 After the workshop you may also want to delete the codespace to save your monthly, free storage credits from GitHub.
 
 To manage your codespaces, sign in to GitHub, select the hamburger menu (☰) in the upper left,
-and select `Codespaces`. This is where you go, for example, to restart a Codespace.
-If, at the point in time you last looked at the GitHub web page, the Codespace had not yet been created,
-it may be necessary to refresh the page in your browser.
+and select `Codespaces`. To stop or delete a codespace, click the meatball menu to the right of the codespace you want to stop or delete, then select the appropriate operation.
 
 See you soon!
