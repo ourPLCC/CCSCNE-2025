@@ -1,12 +1,12 @@
-Pre-exercise activities
-=======================
+Workshop Exercise #1
+====================
 
 1. In your terminal window, make sure you are in the Activity1 directory.
    You will probably have to execute the following command.
 
     cd Activity1
 
-2. Look at the contents of the file idents.plcc to familiarize yourself which
+2. Look at the contents of the file idents.plcc to familiarize yourself with which
    strings would be accepted as tokens.
 
 3. Run
@@ -93,15 +93,15 @@ Token.java            -- defines the Token class; its main method
                          from the lexical specification.
 
 
-Workshop Exercise #1
-====================
+6. Add a new token INTEGER that matches unsigned decimal integers.
 
-1. Add a new token INTEGER that matches unsigned decimal integers.
-
-2. Add tokens IF and ELSE for the reserved words "if" and "else"
+7. Add tokens IF and ELSE for the reserved words "if" and "else"
 respectively.
 
 Use the `scan' program to test your work. You may use keyboard input
 or the provided test file testprog.txt (as shown in the square brackets).
 
 scan [ < testprog.txt ]
+
+Remember that you must re-run plccmk every time you modify your grammar file
+(in this case idents.plcc) in order to be able to test your work.
