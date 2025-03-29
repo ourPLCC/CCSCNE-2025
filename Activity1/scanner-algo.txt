@@ -19,18 +19,18 @@ happens.
 
     When a skip specification matches the start of the input stream:
 
-	    If there is no token candidate, the matched characters are
-	    consumed from the input stream, and lexical processing
-	    starts afresh (at the beginning) without adding any tokens
-	    to the output token stream.
+        If there is no token candidate, the matched characters are
+        consumed from the input stream, and lexical processing
+        starts afresh (at the beginning) without adding any tokens
+        to the output token stream.
 
-	    If there is already a non-empty token candidate (because
-	    some skip rules appear after token rules), the skip match
-	    is completely ignored.
+        If there is already a non-empty token candidate (because
+        some skip rules appear after token rules), the skip match
+        is completely ignored.
 
     When a token specification matches the input stream:
 
-	    If the matched string has a length *greater* than that of
+        If the matched string has a length *greater* than that of
         the current candidate, then the candidate is replaced by
         this match, and matching continues. Otherwise the candidate
         is left unchanged, and matching continues.
