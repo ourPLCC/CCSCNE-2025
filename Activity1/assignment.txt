@@ -70,10 +70,14 @@ Token.java            -- defines the Token class; its main method
                          from the lexical specification.
 
 
-6. Add a new token INTEGER that matches unsigned decimal integers.
+6. Edit idents.plcc to accomplish the following.
+  a. Add a new token INTEGER that matches unsigned decimal integers.
+  b. Add tokens IF and ELSE for the reserved words "if" and "else"
+     respectively.
 
-7. Add tokens IF and ELSE for the reserved words "if" and "else"
-respectively.
+7. Rebuild your scanner by once again executing
+
+    plccmk -c idents.plcc
 
 Use the `scan' program to test your work. You may use keyboard input
 or the provided test file testprog.txt (as shown in the square brackets).
