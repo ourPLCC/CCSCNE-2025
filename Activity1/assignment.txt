@@ -42,31 +42,19 @@ How Tokens are Scanned
 
 (There is a more complete explanation in scanner-algo.txt.)
 
-Both token and skip matches, using Java regular expression rules as given
-in the lexical specification, are attempted in the exact order that the
-specifications appear in the PLCC lexical specification section. Matches
-never cross line boundaries. As the scanner runs through all the
-specifications, here is what happens.
+The "skip" and "token" specification rules are processed in the
+order that they appear in the grammar file. They both attempt to
+match characters found at the beginning of the remaining input.
 
-When a skip specification matches the input stream:
+If a skip rule matches before any token rule has matched, the skip
+rule wins and the matched characters are thrown away.
 
-    If the token candidate is empty, the matched characters are
-    consumed from the input stream, and lexical processing starts afresh
-    (at the beginning) without adding any tokens to the output token
-    stream. Otherwise matching continues.
+If multiple token rules match the current beginning of the input,
+the longest match will be the one that counts. If there is more
+than one longest match, the earliest one will be the one that counts.
 
-When a token specification matches the input stream:
-
-    If the match has a length *greater* than that of the candidate, then
-    the candidate is replaced by this match, and matching continues.
-    Otherwise the candidate is left unchanged, and matching continues.
-
-After all specifications have been tried against the current input, the
-most recent candidate is returned. The characters in the input that were
-matched get consumed. Lexical processing starts afresh.
-
-The scanner does not emit the EOF token.
-When entering input from the keyboard, type ^D to insert an EOF character.
+NOTE: When entering input from the keyboard, type ctrl-D to insert
+an EOF character.
 
 
 PLCC Scanner files (in the Java directory)
